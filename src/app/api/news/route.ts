@@ -2,10 +2,11 @@ import { SEARCHQUERY } from '@/lib/contants'
 import prisma from '@/lib/prisma'
 
 export async function GET(request: Request) {
-  // Get start of today and start of tomorrow
+  // Get start of today
   const startOfToday = new Date()
   startOfToday.setHours(0, 0, 0, 0)
 
+  // Get start of tomorrow
   const startOfTomorrow = new Date(startOfToday)
   startOfTomorrow.setDate(startOfTomorrow.getDate() + 1)
 
@@ -18,8 +19,6 @@ export async function GET(request: Request) {
       },
     },
   })
-
-  console.log('Do we have news for today?', !!isNewsUpdated)
 
   // If news already exists for today, return it
   if (isNewsUpdated) {
