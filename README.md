@@ -1,36 +1,124 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📰 GTA 6 News Feed
 
-## Getting Started
+A modern web app that delivers everything you need to know about **GTA 6** — including news, leaks, official updates, and curated tweets from X (formerly Twitter). Built with **Next.js 14**, **Tailwind CSS**, and optional scraping integrations.
 
-First, run the development server:
+---
+
+## 🚀 Features
+
+- ✅ Curated GTA 6 news feed
+- 🧠 Scrapes or fetches latest tweets from X.com (Twitter)
+- 🔍 Search and filter news and tweets
+- 📱 Responsive design for mobile and desktop
+- ⚡ Fast, modern Next.js 14 architecture (App Router)
+- 🌐 Ready to deploy on Vercel
+
+---
+
+## 📸 Preview
+
+![App Screenshot Placeholder](https://via.placeholder.com/900x500.png?text=GTA+6+News+Feed+App+Preview)
+
+---
+
+## 🛠️ Tech Stack
+
+| Tool         | Purpose                    |
+| ------------ | -------------------------- |
+| Next.js 14   | React framework            |
+| Tailwind CSS | UI styling                 |
+| TypeScript   | Type safety                |
+| Puppeteer\*  | Scraping tweets (optional) |
+| RapidAPI\*   | Twitter/X API (optional)   |
+
+---
+
+## 📂 Project Structure
+
+/gta6-news
+├── app/ # Pages and routes (Next.js App Router)
+│ ├── page.tsx # Homepage (news feed)
+│ └── tweets/page.tsx # Tweets page
+├── components/ # Reusable UI components
+├── lib/ # Helper functions (news, tweets)
+├── public/ # Static assets
+├── styles/ # Global styles
+└── ...
+
+---
+
+## 🧪 Setup & Development
+
+### 1. Clone the Repo
+
+```bash
+git clone https://github.com/yourusername/gta6-news.git
+cd gta6-news
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Run Dev Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit: `http://localhost:3000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ⚙️ Environment Variables (Optional)
 
-## Learn More
+If using Twitter API or a scraping service, set up:
 
-To learn more about Next.js, take a look at the following resources:
+```env
+TWITTER_BEARER_TOKEN=your_token_here
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Or configure Puppeteer logic in `lib/fetchTweets.ts`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📦 Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Deploy easily on [Vercel](https://vercel.com):
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm install -g vercel
+vercel
+```
+
+---
+
+## 🤖 To-Do & Roadmap
+
+- [ ] Real-time tweet scraping
+- [ ] Admin panel for manual news
+- [ ] Notifications / alerts
+- [ ] RSS support
+- [ ] User comments & voting
+
+---
+
+## 📄 License
+
+MIT License © 2025
+
+---
+
+## 💬 Contributing
+
+PRs and issues welcome! Let’s build the best GTA 6 hub out there.
+
+---
+
+## ✨ Credits
+
+- [Rockstar Games](https://rockstargames.com)
+- X.com (Twitter)
+- Community leakers and fans 🙌
