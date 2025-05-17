@@ -35,15 +35,32 @@ A modern web app that delivers everything you need to know about **GTA 6** — i
 
 ## 📂 Project Structure
 
-/gta6-news
-├── app/ # Pages and routes (Next.js App Router)
-│ ├── page.tsx # Homepage (news feed)
-│ └── tweets/page.tsx # Tweets page
+gta6-news/
+├── app/ # App Router pages and layout
+│ ├── layout.tsx # Root layout wrapper
+│ ├── page.tsx # Homepage (GTA 6 News Feed)
+│ └── tweets/ # Tweets feed route
+│ └── page.tsx # Page showing latest tweets
+│
 ├── components/ # Reusable UI components
-├── lib/ # Helper functions (news, tweets)
-├── public/ # Static assets
-├── styles/ # Global styles
-└── ...
+│ ├── NewsCard.tsx # Card component for news articles
+│ └── TweetCard.tsx # Card component for tweet previews
+│
+├── lib/ # Utility and data-fetching functions
+│ ├── fetchNews.ts # News fetching or scraping logic
+│ └── fetchTweets.ts # X/Twitter scraping or API logic
+│
+├── public/ # Static assets (images, icons)
+│
+├── styles/ # Global and custom styles
+│ └── globals.css # Tailwind CSS entry
+│
+├── .env.local # Environment variables (API keys, etc.)
+├── tailwind.config.ts # Tailwind configuration
+├── postcss.config.js # PostCSS config for Tailwind
+├── next.config.js # Next.js configuration
+├── tsconfig.json # TypeScript configuration
+└── package.json # Dependencies and scripts
 
 ---
 
