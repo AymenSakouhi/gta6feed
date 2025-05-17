@@ -35,6 +35,7 @@ A modern web app that delivers everything you need to know about **GTA 6** — i
 
 ## 📂 Project Structure
 
+```bash
 gta6-news/
 ├── app/ # App Router pages and layout
 │ ├── layout.tsx # Root layout wrapper
@@ -61,6 +62,7 @@ gta6-news/
 ├── next.config.js # Next.js configuration
 ├── tsconfig.json # TypeScript configuration
 └── package.json # Dependencies and scripts
+```
 
 ---
 
