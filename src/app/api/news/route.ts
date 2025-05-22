@@ -1,7 +1,7 @@
 import { SEARCHQUERY } from '@/lib/contants'
 import prisma from '@/lib/prisma'
 
-export async function GET(request: Request) {
+export async function POST(request: Request) {
   // Get start of today
   const startOfToday = new Date()
   startOfToday.setHours(0, 0, 0, 0)
@@ -47,5 +47,19 @@ export async function GET(request: Request) {
 
   return Response.json({
     message: `Added ${addedNews} news`,
+  })
+}
+
+export async function GET(request: Request) {
+  const news = await prisma.news.findMany()
+
+  // if no news retrieve nothing
+  if (!news) {
+    return Response.json({ news: [], message: 'No news found' })
+  }
+
+  return Response.json({
+    message: `News found!!!`,
+    news,
   })
 }
