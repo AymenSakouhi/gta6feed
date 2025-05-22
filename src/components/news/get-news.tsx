@@ -19,25 +19,20 @@ export async function generateStaticParams() {
   } = await fetch(`${process.env.BACKEND_URL}/api/news`).then((res) =>
     res.json(),
   )
-  return news.map((post) => ({
-    id: String(post.id),
-  }))
+  return news
 }
 
-export default async function GetNews({
-  params,
-}: {
-  params: Promise<{ id: string }>
-}) {
-  const { id } = await params
-  const { news }: { news: News } = await fetch(
-    `${process.env.BACKEND_URL}/api/news/${id}`,
-  ).then((res) => res.json())
+export default async function GetNews() {
+  const news: News[] = await generateStaticParams()
   return (
     <main>
-      <h1>{news.title}</h1>
-      <p>{news.description}</p>
-      <Image width={400} height={400} src={news.image} alt={news.title} />
+      {news?.map((_) => (
+        <>
+          <h1>{_.title}</h1>
+          <p>{_.description}</p>
+          <Image width={400} height={400} src={_.image} alt={_.title} />
+        </>
+      ))}
     </main>
   )
 }
